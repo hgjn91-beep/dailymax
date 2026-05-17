@@ -38,14 +38,9 @@ export default function App() {
     setEmail('')
   }
 
-  // Handle actual EXE download
+  // Handle actual EXE download from GitHub Release
   const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/DailyMax.exe'
-    link.download = 'DailyMax.exe'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    window.location.href = 'https://github.com/hgjn91-beep/dailymax/releases/download/v1.0.0/DailyMax.exe'
   }
 
   return (

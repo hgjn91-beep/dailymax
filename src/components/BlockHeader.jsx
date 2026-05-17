@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { useTaskStore } from '../store/useTasks'
 
-const BLOCK_ORDER = ['fajr', 'dhuhr', 'asr', 'isha']
+const BLOCK_ORDER = ['fajr', 'dhuhr', 'asr', 'isha', 'night']
 
 // ─── Circular progress ring ───────────────────────────────────────────────────
 function ProgressRing({ pct, size = 48, stroke = 3, color }) {

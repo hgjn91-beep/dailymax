@@ -1,0 +1,3 @@
+# Exclude local large binary downloads from Vercel static hosting
+public/DailyMax.exe
+dist/DailyMax.exe

@@ -23,6 +23,17 @@ export const useTaskStore = create(
         autoClearDone: false,
         opacity: 0.98,
         pinned: true,
+        mode: 'planning',
+        theme: 'night',
+        useSingleAccent: false,
+        masterColor: '#22c55e',
+        blockColors: {
+          fajr: '#34d399',
+          dhuhr: '#22c55e',
+          asr: '#10b981',
+          isha: '#059669',
+          night: '#a7f3d0'
+        }
       },
 
       // ─── Task Actions ──────────────────────────────────────
@@ -114,6 +125,24 @@ export const useTaskStore = create(
         if (key === 'pinned' && window.electronAPI) {
           window.electronAPI.togglePin(value)
         }
+      },
+
+      updateBlockColor: (block, color) => {
+        set(state => ({
+          settings: {
+            ...state.settings,
+            blockColors: {
+              ...(state.settings.blockColors || {
+                fajr: '#34d399',
+                dhuhr: '#22c55e',
+                asr: '#10b981',
+                isha: '#059669',
+                night: '#a7f3d0'
+              }),
+              [block]: color
+            }
+          }
+        }))
       },
     }),
     {
